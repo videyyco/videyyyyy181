@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Video Redirect</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* FOLDER */
+    .folder-text {
+      font-size: 26px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 12px;
+      background: #000000;
+      color: #ffffff;
+      text-align: center;
+      cursor: pointer;
+      margin: 20px 0 16px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .folder-text:hover {
+      background: #111111;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+
+    /* BUTTONS ATAS */
+    .btn-container-top {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      opacity: 0.95;
+    }
+
+    .telegram { background: #0088cc; }
+    .whatsapp { background: #25d366; }
+
+    /* VIDEO */
+    video {
+      width: 70%;
+      max-width: 560px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    @media(max-width:480px){
+      .folder-text { font-size: 22px; padding: 8px 20px; }
+      video { width: 90%; }
+      .btn { font-size: 14px; padding: 8px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FOLDER -->
+  <div class="folder-text" id="folderLink">📁 BOKEP INDO VIRAL</div>
+
+  <!-- TOMBOL ATAS -->
+  <div class="btn-container-top">
+    <a id="tgBtn" class="btn telegram" href="#" target="_blank">Telegram</a>
+    <a id="waBtn" class="btn whatsapp" href="#" target="_blank">WhatsApp</a>
+  </div>
+
+  <!-- VIDEO -->
+  <video id="vid" controls playsinline preload="metadata">
+    <source src="https://cdn.videy.co/e6FhxOGU1.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    const video = document.getElementById("vid");
+    const folderLink = document.getElementById("folderLink");
+    const tgBtn = document.getElementById("tgBtn");
+    const waBtn = document.getElementById("waBtn");
+
+    const adUrlVideo = "https://s.shopee.co.id/BMChWrh5e";
+    const adUrlFolder = "https://videyyco.github.io/video/videyynoiklan/";
+    const telegramUrl = "https://t.me/+gThSAc1EB6A0NzY1";
+    const whatsappUrl = "https://whatsapp.com/channel/0029Vb7H3z52kNFo9cdT7c1V";
+
+    tgBtn.href = telegramUrl;
+    waBtn.href = whatsappUrl;
+
+    // ====== IKLAN CUMA SEKALI ======
+    let adPlayed = false;
+
+    video.addEventListener("play", function () {
+      if (!adPlayed) {
+        adPlayed = true;   // tandai iklan sudah tampil sekali
+        video.pause();     // stop video
+        window.location.href = adUrlVideo;
+      }
+    });
+
+    folderLink.addEventListener("click", function () {
+      window.location.href = adUrlFolder;
+    });
+  </script>
+
+</body>
+</html>
